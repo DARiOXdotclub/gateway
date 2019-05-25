@@ -106,78 +106,38 @@ echo "dl: ".$dl."<br>";
     }
 
     if ($type == 'download') {
-        switch ($dl) {
-            case '1':
-                redirect("https://storage.googleapis.com/dariox/share/MinecraftWorld.zip");
-                break;
-            case '2':
-                redirect("https://storage.googleapis.com/dariox/share/osu-skin/06-12-2017.osk");
-                break;
-            case '3':
-                redirect("https://storage.googleapis.com/dariox/share/osu-skin/10-03-2018.osk");
-                break;
-            case '4':
-                redirect("https://storage.googleapis.com/dariox/share/osu-skin/20-05-2019.osk");
-                break;
-            case '5':
-                redirect("https://storage.googleapis.com/dariox/share/osu-skin/latest.osk");
-                break;
-            case '6':
-                redirect("https://storage.googleapis.com/dariox/cdn/music/QueenGreatestHits.zip");
-                break;
-            case '7':
-                redirect("https://storage.googleapis.com/dariox/share/nsfw/RULE%2034%20-%20NieR%20Automata.zip");
-                break;
-            case '8':
-                redirect("https://storage.googleapis.com/dariox/share/nsfw/RULE34%20-%20Overwatch.zip");
-                break;
-            case '9':
-                redirect("https://storage.googleapis.com/dariox/share/nsfw/Hentai.zip");
-                break;
-            case '10':
-                redirect("https://storage.googleapis.com/dariox/share/nsfw/Furry%20Porn.zip");
-                break;
-            case '11':
-                redirect("https://storage.googleapis.com/dariox/share/audio/intervene_jb.mp3");
-                break;
-            case '12':
-                redirect("https://storage.googleapis.com/dariox/share/osu-skin/25-05-2019.osk");
-                break;
-            case '13':
-                redirect("https://storage.googleapis.com/dariox/share/osu-skin/24-05-2019.osk");
-                break;
-            case '666':
-                /* thomas the thermal nuclear bomb */
-                redirect("https://www.youtube.com/watch?v=_MBgz9h7GGM");
-                break;
-            default:
-                gtfo();
-                break;
+        $dllinks = array();
+        $dllinks[1] = "https://storage.googleapis.com/dariox/share/MinecraftWorld.zip";
+        $dllinks[2] = "https://storage.googleapis.com/dariox/share/osu-skin/06-12-2017.osk";
+        $dllinks[3] = "https://storage.googleapis.com/dariox/share/osu-skin/10-03-2018.osk";
+        $dllinks[4] = "https://storage.googleapis.com/dariox/share/osu-skin/20-05-2019.osk";
+        $dllinks[5] = "https://storage.googleapis.com/dariox/share/osu-skin/latest.osk";
+        $dllinks[6] = "https://storage.googleapis.com/dariox/cdn/music/QueenGreatestHits.zip";
+        $dllinks[7] = "https://storage.googleapis.com/dariox/share/nsfw/RULE%2034%20-%20NieR%20Automata.zip";
+        $dllinks[8] = "https://storage.googleapis.com/dariox/share/nsfw/RULE34%20-%20Overwatch.zip";
+        $dllinks[9] = "https://storage.googleapis.com/dariox/share/nsfw/Hentai.zip";
+        $dllinks[10] = "https://storage.googleapis.com/dariox/share/nsfw/Furry%20Porn.zip";
+        $dllinks[11] = "https://storage.googleapis.com/dariox/share/audio/intervene_jb.mp3";
+        $dllinks[666] = "https://www.youtube.com/watch?v=_MBgz9h7GGM"; // thomas the thermal nuclear bomb
+
+        if (array_key_exists($dl, $dllinks)) {
+            redirect($dllinks[$dl]);
+        } else {
+            gtfo();
         }
-    }
-    elseif ($type == 'link'){
-        switch ($destination) {
-            case '1':
-                redirect("http://twitch.tv/seedplaysgames");
-                break;
-            case '2':
-                redirect("http://twitter.com/darioxdotclub");
-                break;
-            case '3':
-                redirect("http://github.com/darioxdotclub");
-                break;
-            case '4':
-                redirect("http://github.com/jylescoad-ward");
-                break;
-            case '5':
-                redirect('http://youtube.com/seedvevo');
-                break;
-            default:
-                gtfo();
-                break;
+    } elseif ($type == 'links') {
+        $links = array();
+        $links[1] = "http://twitch.tv/seedplaysgames";
+        $links[2] = "http://twitter.com/darioxdotclub";
+        $links[3] = "http://github.com/darioxdotclub";
+        $links[4] = "http://github.com/jylescoad-ward";
+        $links[5] = "http://youtube.com/seedvevo";
+        if (array_key_exists($destination, $links)) {
+            redirect($links[$destination]);
+        } else {
+            gtfo;
         }
-    }
-    else{
+    } else {
         gtfo();
     }
 

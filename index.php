@@ -93,9 +93,10 @@ $writeToLog = $writeToLogDestination.$writeToLogType.$writeToLogIP.$writeToLogUs
 fwrite($log, $writeToLog);
 fclose($log);
 
-
+echo "type: ".$type."<br>";
+echo "dl: ".$dl."<br>";
     function gtfo(){
-        header("Location {$_SERVER['HEET_REFERER']}");
+        /*header("Location {$_SERVER['HTTP_REFERER']}");*/
     }
     function redirect($destination){
         header("Location: ".$destination);

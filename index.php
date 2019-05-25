@@ -72,7 +72,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
 
 
 
-    $type=$_POST['$type'];
+    $type=$_POST['type'];
     $dl=$_POST['dl'];
 
 

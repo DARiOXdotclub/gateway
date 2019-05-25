@@ -73,6 +73,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
 
 
     $type=$_GET['type'];
+    $destination=$_GET['destination'];
     $dl=$_GET['dl'];
 
 
@@ -80,16 +81,17 @@ $writeDirectory = "/var/www/dxcdn/log";
 $logFileName = "gateway.txt";
 $logWriteDestination = $writeDirectory."/".$logFileName;
 $log = fopen($logWriteDestination, a);
-$writeToLogDestination = "Download ID: ".$dl."\n";
+$writeToLogDestination = "Download ID: ".$id."\n";
+$writeToLogLinkDestination = "Link Destination: ".$destination."\n";
 $writeToLogType = "Type: ".$type."\n";
 $writeToLogIP = "IP Address: ".$_SERVER['REMOTE_ADDR']."\n";
 $writeToLogUserAgent = "User Agent: ".$_SERVER['HTTP_USER_AGENT']."\n";
 $writeToLogReferer = "HTTP Referer: ".$_SERVER['HTTP_REFERER']."\n";
 $writeToLogRemotePort = "Remote Port: ".$_SERVER['REMOTE_PORT']."\n";
-$writeToLogHostname = "Hostname: ".$_SERVER['REMOTE_HOST']."\n";
+$writeToLogHostname = "Hostname: ".gethostbyaddr($_SERVER['REMOTE_ADDR'])."\n";
 $writeToLogCountry = "Country: ".ip_info($_SERVER['REMOTE_ADDR'], "countrycode")."\n";
 $writeToLogTime = "Time Accessed: ".date('l j \of F Y h;i:s A')."\n";
-$writeToLog = $writeToLogDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
+$writeToLog = $writeToLogDestination.$writeToLogLinkDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
 fwrite($log, $writeToLog);
 fclose($log);
 
@@ -97,6 +99,7 @@ echo "type: ".$type."<br>";
 echo "dl: ".$dl."<br>";
     function gtfo(){
         /*header("Location {$_SERVER['HTTP_REFERER']}");*/
+        die('Forbidden');
     }
     function redirect($destination){
         header("Location: ".$destination);
@@ -136,11 +139,23 @@ echo "dl: ".$dl."<br>";
         elseif($dl == '11'){
             redirect("https://storage.googleapis.com/dariox/share/audio/intervene_jb.mp3");
         }
-
-
         /* thomas the thermal nuclear bomb */
         elseif($dl == '666'){
             redirect("https://www.youtube.com/watch?v=_MBgz9h7GGM");
+        }
+        else{
+            gtfo();
+        }
+    }
+    elseif ($type == 'link'){
+        if ($destination == '1'){
+            redirect("http://twitch.tv/seedplaysgames");
+        }
+        elseif ($destination == '2'){
+            redirect("http://twitter.com/darioxdotclub");
+        }
+        elseif($destination == '3'){
+            redirect("http://github.com/darioxdotclub");
         }
         else{
             gtfo();

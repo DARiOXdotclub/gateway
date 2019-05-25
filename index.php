@@ -99,7 +99,7 @@ echo "type: ".$type."<br>";
 echo "dl: ".$dl."<br>";
     function gtfo(){
         /*header("Location {$_SERVER['HTTP_REFERER']}");*/
-        die('Forbidden');
+        redirect("http://dariox.club");
     }
     function redirect($destination){
         header("Location: ".$destination);

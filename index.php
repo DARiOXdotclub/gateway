@@ -106,59 +106,69 @@ echo "dl: ".$dl."<br>";
     }
 
     if ($type == 'download') {
-        if($dl == '1') {
-            redirect("https://storage.googleapis.com/dariox/share/MinecraftWorld.zip");
-        }
-        elseif($dl == '2') {
-            redirect("https://storage.googleapis.com/dariox/share/osu-skin/06-12-2017.osk");
-        }
-        elseif($dl == '3'){
-            redirect("https://storage.googleapis.com/dariox/share/osu-skin/10-03-2018.osk");
-        }
-        elseif($dl == '4'){
-            redirect("https://storage.googleapis.com/dariox/share/osu-skin/20-05-2019.osk");
-        }
-        elseif($dl == '5'){
-            redirect("https://storage.googleapis.com/dariox/share/osu-skin/latest.osk");
-        }
-        elseif($dl == '6'){
-            redirect("https://storage.googleapis.com/dariox/cdn/music/QueenGreatestHits.zip");
-        }
-        elseif($dl == '7'){
-            redirect("https://storage.googleapis.com/dariox/share/nsfw/RULE%2034%20-%20NieR%20Automata.zip");
-        }
-        elseif($dl == '8'){
-            redirect("https://storage.googleapis.com/dariox/share/nsfw/RULE34%20-%20Overwatch.zip");
-        }
-        elseif($dl == '9'){
-            redirect("https://storage.googleapis.com/dariox/share/nsfw/Hentai.zip");
-        }
-        elseif($dl == '10'){
-            redirect("https://storage.googleapis.com/dariox/share/nsfw/Furry%20Porn.zip");
-        }
-        elseif($dl == '11'){
-            redirect("https://storage.googleapis.com/dariox/share/audio/intervene_jb.mp3");
-        }
-        /* thomas the thermal nuclear bomb */
-        elseif($dl == '666'){
-            redirect("https://www.youtube.com/watch?v=_MBgz9h7GGM");
-        }
-        else{
-            gtfo();
+        switch ($dl) {
+            case '1':
+                redirect("https://storage.googleapis.com/dariox/share/MinecraftWorld.zip");
+                break;
+            case '2':
+                redirect("https://storage.googleapis.com/dariox/share/osu-skin/06-12-2017.osk");
+                break;
+            case '3':
+                redirect("https://storage.googleapis.com/dariox/share/osu-skin/10-03-2018.osk");
+                break;
+            case '4':
+                redirect("https://storage.googleapis.com/dariox/share/osu-skin/20-05-2019.osk");
+                break;
+            case '5':
+                redirect("https://storage.googleapis.com/dariox/share/osu-skin/latest.osk");
+                break;
+            case '6':
+                redirect("https://storage.googleapis.com/dariox/cdn/music/QueenGreatestHits.zip");
+                break;
+            case '7':
+                redirect("https://storage.googleapis.com/dariox/share/nsfw/RULE%2034%20-%20NieR%20Automata.zip");
+                break;
+            case '8':
+                redirect("https://storage.googleapis.com/dariox/share/nsfw/RULE34%20-%20Overwatch.zip");
+                break;
+            case '9':
+                redirect("https://storage.googleapis.com/dariox/share/nsfw/Hentai.zip");
+                break;
+            case '10':
+                redirect("https://storage.googleapis.com/dariox/share/nsfw/Furry%20Porn.zip");
+                break;
+            case '11':
+                redirect("https://storage.googleapis.com/dariox/share/audio/intervene_jb.mp3");
+                break;
+            case '666':
+                /* thomas the thermal nuclear bomb */
+                redirect("https://www.youtube.com/watch?v=_MBgz9h7GGM");
+                break;
+            default:
+                gtfo();
+                break;
         }
     }
     elseif ($type == 'link'){
-        if ($destination == '1'){
-            redirect("http://twitch.tv/seedplaysgames");
-        }
-        elseif ($destination == '2'){
-            redirect("http://twitter.com/darioxdotclub");
-        }
-        elseif($destination == '3'){
-            redirect("http://github.com/darioxdotclub");
-        }
-        else{
-            gtfo();
+        switch ($destination) {
+            case '1':
+                redirect("http://twitch.tv/seedplaysgames");
+                break;
+            case '2':
+                redirect("http://twitter.com/darioxdotclub");
+                break;
+            case '3':
+                redirect("http://github.com/darioxdotclub");
+                break;
+            case '4':
+                redirect("http://github.com/jylescoad-ward");
+                break;
+            case '5':
+                redirect('http://youtube.com/seedvevo');
+                break;
+            default:
+                gtfo();
+                break;
         }
     }
     else{

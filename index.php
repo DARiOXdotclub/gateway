@@ -140,6 +140,12 @@ echo "dl: ".$dl."<br>";
             case '11':
                 redirect("https://storage.googleapis.com/dariox/share/audio/intervene_jb.mp3");
                 break;
+            case '12':
+                redirect("https://storage.googleapis.com/dariox/share/osu-skin/25-05-2019.osk");
+                break;
+            case '13':
+                redirect("https://storage.googleapis.com/dariox/share/osu-skin/24-05-2019.osk");
+                break;
             case '666':
                 /* thomas the thermal nuclear bomb */
                 redirect("https://www.youtube.com/watch?v=_MBgz9h7GGM");

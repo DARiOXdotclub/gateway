@@ -118,6 +118,17 @@ echo "dl: ".$dl."<br>";
         $dllinks[9] = "https://storage.googleapis.com/dariox/share/nsfw/Hentai.zip";
         $dllinks[10] = "https://storage.googleapis.com/dariox/share/nsfw/Furry%20Porn.zip";
         $dllinks[11] = "https://storage.googleapis.com/dariox/share/audio/intervene_jb.mp3";
+
+        /* nsfw */
+        $dllinks[12] = "https://storage.googleapis.com/dariox/share/nsfw/Hentai-Generic.zip";
+        $dllinks[13] = "https://storage.googleapis.com/dariox/share/nsfw/Hentai-Manga.zip";
+        $dllinks[14] = "https://storage.googleapis.com/dariox/share/nsfw/Hentai-Ecchi.zip";
+        $dllinks[15] = "https://storage.googleapis.com/dariox/share/nsfw/Rule34.zip";
+        $dllinks[16] = "https://storage.googleapis.com/dariox/share/nsfw/Rule34-Overwatch-Reddit.zip";
+        $dllinks[18] = "https://storage.googleapis.com/dariox/share/nsfw/Rule34-Bowsette.zip";
+        $dllinks[19] = "https://storage.googleapis.com/dariox/share/nsfw/Reddit-GoneWild18.zip";
+        $dllinks[20] = "https://storage.googleapis.com/dariox/share/nsfw/Reddie-TittyDrop.zip";
+
         $dllinks[666] = "https://www.youtube.com/watch?v=_MBgz9h7GGM"; // thomas the thermal nuclear bomb
 
         if (array_key_exists($dl, $dllinks)) {

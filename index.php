@@ -92,8 +92,16 @@ $writeToLogHostname = "Hostname: ".gethostbyaddr($_SERVER['REMOTE_ADDR'])."\n";
 $writeToLogCountry = "Country: ".ip_info($_SERVER['REMOTE_ADDR'], "country")."\n";
 $writeToLogTime = "Time Accessed: ".date('l j \of F Y h;i:s A')."\n";
 $writeToLog = $writeToLogDestination.$writeToLogLinkDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
-fwrite($log, $writeToLog);
-fclose($log);
+
+if (strpos($writeToLogUserAgent, 'CloudFlare-AlwaysOnline') !== false) {
+    fwrite($log, $writeToLog);
+    fclose($log);
+}
+else {
+    echo "Hello CloudFlare!";
+}
+
+
 
 echo "type: ".$type."<br>";
 echo "dl: ".$dl."<br>";

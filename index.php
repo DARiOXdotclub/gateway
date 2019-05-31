@@ -135,7 +135,7 @@ echo "dl: ".$dl."<br>";
         $dllinks[16] = "https://storage.googleapis.com/dariox/share/nsfw/Rule34-Overwatch-Reddit.zip";
         $dllinks[18] = "https://storage.googleapis.com/dariox/share/nsfw/Rule34-Bowsette.zip";
         $dllinks[19] = "https://storage.googleapis.com/dariox/share/nsfw/Reddit-GoneWild18.zip";
-        $dllinks[20] = "https://storage.googleapis.com/dariox/share/nsfw/Reddie-TittyDrop.zip";
+        $dllinks[20] = "https://storage.googleapis.com/dariox/share/nsfw/Reddit-TittyDrop.zip";
 
         $dllinks[666] = "https://www.youtube.com/watch?v=_MBgz9h7GGM"; // thomas the thermal nuclear bomb
 

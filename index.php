@@ -77,7 +77,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $dl=$_GET['dl'];
 
 
-$writeDirectory = "/var/www/dxcdn/log";
+$writeDirectory = "/etc/darioxlog";
 $logFileName = "gateway.txt";
 $logWriteDestination = $writeDirectory."/".$logFileName;
 $log = fopen($logWriteDestination, a);
